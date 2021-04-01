@@ -11,6 +11,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'content' =>$faker->paragraph(),
         'thumbnail' => "https://source.unsplash.com/random",
         'subCategoryId' => $faker->numberBetween(1,17),
+        'postType' => $faker->randomElement($array=array('trending', 'alert', 'mostfocus', 'mostvisited')),
         'created_at' => $faker->dateTimeBetween($startDate = '-3 Months', $endDate = 'now')
     ];
 });

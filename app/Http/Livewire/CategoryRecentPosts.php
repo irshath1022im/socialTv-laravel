@@ -8,7 +8,7 @@ use Livewire\Component;
 class CategoryRecentPosts extends Component
 {
 
-    public $categoryId = 2;
+    public $categoryId;
     public $categoryName;
     public $posts=[];
 
@@ -24,22 +24,23 @@ class CategoryRecentPosts extends Component
 
     public function getCategoryPosts($id)
     {
-        $this->posts = Category::with(['posts' => function($query){
-            return $query->orderByDesc('created_at')->take(3);
-        }])
-        ->where('id',$id)
-        ->get();
+
     }
 
-    // public function mount($id)
-    // {
-    //     $this->categoryName = $id;
+    public function mount($categoryId)
+    {
+        $this->categoryName = $categoryId;
 
-    // }
+    }
 
     public function render()
     {
 
+        $this->posts = Category::with(['posts' => function($query){
+            return $query->orderByDesc('created_at')->take(3);
+        }])
+        ->where('id',$this->categoryId)
+        ->get();
 
 
         return view('livewire.category-recent-posts');

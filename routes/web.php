@@ -94,14 +94,23 @@ Route::get('/subCategory/{category}', function ($category) {
 
 })->name('subCategory');
 
-Route::get('test/{id}', function ($id) {
-    $result = Category::with(['posts' => function($query){
-        return $query->orderByDesc('created_at')->take(3);
-    }])
-    ->where('id', $id)
-    ->get();
+// Route::get('test/{id}', function ($id) {
+//     $result = Category::with(['posts' => function($query){
+//         return $query->orderByDesc('created_at')->take(3);
+//     }])
+//     ->where('id', $id)
+//     ->get();
 
 
+
+//     return $result;
+// });
+
+Route::get('test', function () {
+
+    $result =Post::where('postType', 'trending')
+            ->orderByDesc('created_at')
+            ->get();
 
     return $result;
 });

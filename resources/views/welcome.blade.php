@@ -5,9 +5,10 @@
 
 
 
-        @livewire('flash-news')
+        {{-- @livewire('flash-news') --}}
+        @livewire('flash-news2')
 
-        @livewire('home-adds')
+        @livewire('home-category-posts')
 
         {{-- @component('components.adds')
 

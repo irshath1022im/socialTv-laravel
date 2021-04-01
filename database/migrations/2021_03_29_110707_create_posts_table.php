@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->string('thumbnail')->nullable();
             $table->unsignedBigInteger('subCategoryId')->index();
-
+            $table->text('postType')->nullable(); // display the trending news or emergenry or alert
             $table->foreign('subCategoryId')->references('id')->on('sub_categories');
             $table->timestamps();
         });
