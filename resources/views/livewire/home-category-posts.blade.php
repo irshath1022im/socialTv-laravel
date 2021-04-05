@@ -11,7 +11,10 @@
 
         <div class="col-sm-6 col-md-4">
             <div class="box">
-                <img src="https://source.unsplash.com/daily/300x300" alt="Desmond"/>
+                <img src="{{
+                    Storage::url($item->thumbnail) !== null ? Storage::url($item->thumbnail)
+                    : Storage::url('storage/categoryThumbnails/twee.jpg')}}"
+                    alt="Desmond"/>
                 <div class="box-heading">
                     <h4 class="title text-uppercase" style="color:#333333;">{{ $item->category}}</h4>
                     {{-- <span class="post" style="color:#333333;">web designer</span> --}}

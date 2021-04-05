@@ -9,6 +9,7 @@
                         <li class="nav-item" style="color: rgb(97,255,0);">
                             <a class="nav-link" href="{{route('home')}}" style="color: rgb(255,255,255);font-size: 19px;font-family: 'Alegreya Sans SC', sans-serif;text-align: left;font-weight: bold;">HOME</a>
                         </li>
+
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#" style="color: rgb(254,254,254);font-size: 18px;font-family: 'Alegreya Sans SC', sans-serif;font-weight: bold;">CATEGORIES</a>
                             <div class="dropdown-menu" style="background: rgb(59,108,129);color: rgb(224,25,25);font-size: 15px;font-family: 'Alegreya Sans SC', sans-serif;">
                                 @foreach ($menu as $item)
@@ -18,6 +19,11 @@
                                 @endforeach
                             </div>
                         </li>
+
+                        <li class="nav-item" style="color: rgb(97,255,0);">
+                            <a class="nav-link" href="{{route('admin')}}" style="color: rgb(255,255,255);font-size: 19px;font-family: 'Alegreya Sans SC', sans-serif;text-align: left;font-weight: bold;">ADMIN</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

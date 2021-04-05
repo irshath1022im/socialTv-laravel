@@ -1,7 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Post;
 use App\Category;
+use Admin\AdminCategoryController;
+use Admin\AdminSubCategoryController;
+use CategoryController;
 use App\SubCategory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +40,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('admin', function(){
+    return view('admin');
+})->name('admin');
+
+Route::resource('/adminCategory', AdminCategoryController::class);
+Route::resource('/adminSubCategory', AdminSubCategoryController::class);
+
 Route::get('/navigation',  function(){
 
     $category = Category::with(['subCategory' => function($query){
@@ -57,23 +69,6 @@ Route::get('/postsByWeek', function () {
     // return $result;
 });
 
-Route::get('/category/{categoryName}', function($categoryName)
-{
-    $from = date('2021-01-02');
-    $to = date('2021-03-02');
-
-    $news =Category::with(['posts' => function($query){
-        return $query->where('created_at', '>', date('2021-03-01'));
-    }])->where('category', '=', $categoryName)->get();
-
-    $topNews = Category::with(['posts' => function($query) use($from,$to)
-    {
-        return $query->whereBetween('created_at', [$from, $to]);
-    }])
-    ->where('category', '=', $categoryName)->get();
-
-    return view('category', ['news' => $news, 'topNews' => $topNews]);
-});
 
 
 Route::get('/subCategory/{category}', function ($category) {
