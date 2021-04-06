@@ -1,0 +1,16 @@
+.form-control {
+  margin-bottom: 10px;
+  background: rgb(247,244,244);
+}
+
+.postForm {
+  padding: 12px;
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+}
+
+h4 {
+  background: #efdddd;
+  padding: 23px;
+  margin: 12px;
+}

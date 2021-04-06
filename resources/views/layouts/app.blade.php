@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atomic+Age">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('fonts/ionicons.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/Article-List.css')}}">
         <link rel="stylesheet" href="{{asset('css/Navigation-Clean.css')}}">
@@ -28,6 +30,7 @@
         <link rel="stylesheet" href="{{ asset('css/untitled-1.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Article-Cards.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Bold-BS4-Cards-with-Hover-Effect-74.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/header.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Responsive-footer.css')}}">
         @livewireStyles
         @livewireScripts
@@ -35,7 +38,10 @@
     <body class="container">
 
 
-       @livewire('nav-bar')
+       {{-- @livewire('nav-bar') --}}
+       @component('components.header')
+
+       @endcomponent
 
         @component('components.covid19bar')
 

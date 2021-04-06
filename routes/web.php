@@ -6,6 +6,7 @@ use App\Post;
 use App\Category;
 use Admin\AdminCategoryController;
 use Admin\AdminSubCategoryController;
+use Admin\AdminPostController;
 use CategoryController;
 use App\SubCategory;
 use Illuminate\Support\Carbon;
@@ -46,6 +47,7 @@ Route::get('admin', function(){
 
 Route::resource('/adminCategory', AdminCategoryController::class);
 Route::resource('/adminSubCategory', AdminSubCategoryController::class);
+Route::resource('/adminPost', AdminPostController::class);
 
 Route::get('/navigation',  function(){
 

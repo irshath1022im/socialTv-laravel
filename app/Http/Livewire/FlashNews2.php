@@ -22,7 +22,7 @@ class FlashNews2 extends Component
         $result =Post::where('postType', $this->lookingPostFor)
         ->orderByDesc('created_at')
         ->get()
-        ->take(3);
+        ->take(6);
 
         return view('livewire.flash-news2', ['posts' => $result]);
     }

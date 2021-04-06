@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
+    protected $fillable = ['title', 'content', 'thumbnail', 'postType', 'subCategoryId'];
 
  /**
      * Get the user that owns the Post
