@@ -6,15 +6,17 @@
 
 
         {{-- @livewire('flash-news') --}}
-        @livewire('flash-news2')
+        {{-- @livewire('flash-news2') --}}
 
-        @livewire('home-category-posts')
+        {{-- @livewire('home-category-posts') --}}
 
-        {{-- @component('components.adds')
+        @livewire('home-recent-post')
+
+        @component('components.Home.socialtvAds')
 
         @endcomponent
 
-        @component('components.buySale')
+        {{-- @component('components.buySale')
 
         @endcomponent --}}
 

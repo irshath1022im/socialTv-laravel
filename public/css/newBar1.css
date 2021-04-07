@@ -1,0 +1,22 @@
+@media (min-width: 300px) {
+  .postBar1-img {
+    padding: 0px;
+    width: 100px;
+    height: 80px;
+  }
+}
+
+.row {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .postBar1-img {
+    width: 150px;
+    height: 120px;
+  }
+}
+
+.img-fluid.postBar1-img {
+}
+

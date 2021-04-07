@@ -77,7 +77,11 @@
                                     <span class="d-block" style="border-style: none;border-bottom: 5px solid rgb(4,40,77);font-family: 'Atomic Age', cursive;">25</span><span class="d-block" style="font-family: 'Atomic Age', cursive;">March</span></div>
                                 <div style="padding: 4px;">
                                     <h5 style="font-family: Alatsi, sans-serif;font-size: 18px;">
-                                    {{$post->content}}</h5>
+                                    {!! $post->title !!}
+                                    </h5>
+                                    <a href="{{ route('adminPost.show',['adminPost'=>$post->id])}}">
+                                        <button class="btn btn-info btn-sm">Read More</button>
+                                    </a>
                                 </div>
                             </div>
                             @endforeach

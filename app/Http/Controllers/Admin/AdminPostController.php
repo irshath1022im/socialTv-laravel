@@ -44,6 +44,9 @@ class AdminPostController extends Controller
     public function store(Request $request)
     {
         //
+
+        // return $request->all();
+
         $validated = $request->validate([
             'title' => 'required|min:10|not_regex:/(^([a-zA-z]+)(\d+)?$)/u',
             'content' => 'required',
@@ -67,8 +70,8 @@ class AdminPostController extends Controller
         ];
 
         // dump($validated);
-        Post::create($newPost);
-        return redirect()->route('adminPost.index')->with('status', 'New Post Created');
+        $result =Post::create($newPost);
+        return redirect()->route('adminPost.show',['adminPost' => $result->id ])->with('status', 'New Post Created');
     }
 
     /**
@@ -80,6 +83,9 @@ class AdminPostController extends Controller
     public function show($id)
     {
         //
+        $result = Post::findOrFail($id);
+        return view('post', ['post' => $result]);
+
     }
 
     /**

@@ -21,12 +21,17 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="{{ asset('fonts/ionicons.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/Article-List.css')}}">
         <link rel="stylesheet" href="{{asset('css/Navigation-Clean.css')}}">
         <link rel="stylesheet" href="{{asset('css/Navigation-with-Button.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Social-Icons.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Style.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/newBar1.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/Pretty-Footer.css')}}">
         <link rel="stylesheet" href="{{ asset('css/untitled-1.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Article-Cards.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Bold-BS4-Cards-with-Hover-Effect-74.css')}}">
@@ -43,9 +48,9 @@
 
        @endcomponent
 
-        @component('components.covid19bar')
+        {{-- @component('components.covid19bar')
 
-        @endcomponent
+        @endcomponent --}}
 
             @yield('content')
 

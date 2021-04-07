@@ -103,7 +103,8 @@ Most Focus
 
         <div class="form-group">
           <label for="">Content</label>
-          <textarea class="form-control" name="content" id="" rows="15">{{ old('content', isset($post) ? $post->content : '')}}</textarea>
+          {{-- <textarea class="form-control" name="content" id="" rows="15">{{ old('content', isset($post) ? $post->content : '')}}</textarea> --}}
+          <textarea class="form-control" id="summary-ckeditor" name="content">{{ old('content', isset($post) ? $post->content : '')}}</textarea>
         </div>
 
 

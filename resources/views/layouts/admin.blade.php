@@ -67,6 +67,10 @@
 
         </div>
         <!-- JavaScript Bundle with Popper -->
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+            <script>
+                CKEDITOR.replace( 'summary-ckeditor' );
+            </script>
         <script src="{{ asset('js/jquery.min.js')}}"></script>
         <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     </body>
