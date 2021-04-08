@@ -12,9 +12,12 @@
             <div class="float-right"><a class="btn btn-success btn-sm" role="button" style="font-size: 10px;" href="#" target="_blank">CATEGORY</a><a class="btn btn-success btn-sm" role="button" style="font-size: 10px;margin-left: 4px;" href="#" target="_blank">{{ $post->subCategoryId}}</a><a class="btn btn-info btn-sm" role="button" style="font-size: 10px;" href="{{ route('adminPost.show' ,['adminPost'=>$post->id])}}" target="_blank">மேலும் படிக்க&nbsp;</a></div>
 
             <div class="fb-share-button"
-            data-href="http://localhost:8000/adminPost/106"
+            {{-- data-href="http://localhost:8000/adminPost/106" --}}
+            data-href=" {{ url('http://www.socialtv24.info/adminPost/'.$post->id)}}"
             data-layout="button_count">
             </div>
+
+            {{ url('/adminPost/'.$post->id)}}
 
         </div>
     </div>
