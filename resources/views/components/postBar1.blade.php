@@ -17,7 +17,7 @@
             data-layout="button_count">
             </div>
 
-            {{ url('/adminPost/'.$post->id)}}
+            {{-- {{ url('/adminPost/'.$post->id)}} --}}
 
         </div>
     </div>
