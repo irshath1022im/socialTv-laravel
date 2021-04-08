@@ -5,6 +5,11 @@
             <h5 style="color: rgb(255,255,255);font-family: 'Atomic Age', cursive;font-size: 17px;padding: 5px;margin-right: 3px;margin-left: 22px;">Recent Posts</h5>
         </div>
 
+            {{-- <div id="fb-root">
+
+            </div> --}}
+
+
 
             <div class="d-flex flex-wrap justify-content-around" style="border-style: none;padding: 0px;padding-right: 0px;padding-left: 0px;">
 
@@ -13,6 +18,7 @@
                     @component('components.postBar1',['post'=>$post])
 
                     @endcomponent
+
 
                 @endforeach
 
