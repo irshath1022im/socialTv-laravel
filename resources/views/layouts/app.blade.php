@@ -39,6 +39,8 @@
         <link rel="stylesheet" href="{{ asset('css/Responsive-footer.css')}}">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script data-ad-client="ca-pub-9931371849873169" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135001405-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
