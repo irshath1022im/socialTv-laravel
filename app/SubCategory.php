@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategory extends Model
 {
     //
+    protected $fillable=['subCategory', 'thumbnail','categoryId'];
     /**
      * Get the user that owns the SubCategory
      *

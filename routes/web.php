@@ -23,6 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('admin', function(){
+    return view('admin');
+})->name('admin');
+
+Route::resource('/adminCategory', AdminCategoryController::class);
+Route::resource('/adminSubCategory', AdminSubCategoryController::class);
+Route::resource('/adminPost', AdminPostController::class);
+
+
+// Route::get('/{any?}', function () {
+//     return view('welcomevue');
+// })->where('any', '^(?!api\/)[\/\w\.\,-]*');
+
+
 Route::get('/', function () {
 
     // $from = date('2021-01-01');
@@ -41,28 +55,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('admin', function(){
-    return view('admin');
-})->name('admin');
 
-Route::resource('/adminCategory', AdminCategoryController::class);
-Route::resource('/adminSubCategory', AdminSubCategoryController::class);
-Route::resource('/adminPost', AdminPostController::class);
 
-Route::get('/navigation',  function(){
+// Route::get('/navigation',  function(){
 
-    $category = Category::with(['subCategory' => function($query){
-        return $query->get()->pluck('subCategory');
-    }])->get();
-    // return $category;
-    return view('components.navbar', ['category'=>$category]);
-});
+//     $category = Category::with(['subCategory' => function($query){
+//         return $query->get()->pluck('subCategory');
+//     }])->get();
+//     // return $category;
+//     return view('components.navbar', ['category'=>$category]);
+// });
 
-Route::get('/recentPosts', function()
-{
-    $result = Post::orderByDesc('created_at')->take(5)->get();
-    return $result;
-});
+// Route::get('/recentPosts', function()
+// {
+//     $result = Post::orderByDesc('created_at')->take(5)->get();
+//     return $result;
+// });
 
 Route::get('/postsByWeek', function () {
 

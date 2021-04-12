@@ -6,6 +6,7 @@ use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class AdminSubCategoryController extends Controller
 {
@@ -47,6 +48,28 @@ class AdminSubCategoryController extends Controller
             'thumbnail' => 'required',
             'categoryId' => 'required'
         ]);
+
+        if($request->hasFile('thumbnail')){
+            // dump($request->hasFile('thumbnail'));
+            $file = $request->file('thumbnail');
+            // $file->store('categoryThumbnails');
+            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->category. '.'. $file->guessExtension() );
+
+            // return $file->getClientOriginalExtension();
+        }
+
+
+            $newSubCategory = [
+                'subCategory' => $request->subCategory,
+                 'thumbnail' => $path,
+                 'categoryId' => $request->categoryId
+                ];
+            SubCategory::create($newSubCategory);
+
+            // return view('welcome')->with('status', 'Category Created ....');
+
+            return redirect()->route('adminSubCategory.index')->with('status', 'SubCategory Created ....');
+
 
         return $request->all();
     }
