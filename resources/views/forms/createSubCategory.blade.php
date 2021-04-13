@@ -32,10 +32,8 @@
             @foreach ($categoryList as $item)
             <option value="{{$item->id}}"
                 @isset($subCategory)
-                    {{ $subCategory -> id === $item->id ? 'selected' : null}}
+                    {{ $subCategory->categoryId === $item->id ? 'selected' : null}}
                 @endisset
-
-                {{ old('categoryId') == $item->id ? 'selected' : '' }}
                 >
                 {{ $item->category }}
             </option>

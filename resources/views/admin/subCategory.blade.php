@@ -5,7 +5,7 @@
     @component('components.notification')
 
     @endcomponent
-    {{-- @dump($subCategory) --}}
+    @dump($subCategory)
     <div>
         <a name="" id="" class="btn btn-primary" href="{{ route('adminSubCategory.create')}}" role="button">Add New Category</a>
     </div>

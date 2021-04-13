@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Post;
 use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
@@ -18,8 +19,12 @@ class AdminSubCategoryController extends Controller
     public function index()
     {
         //
-        $subCategory = SubCategory::with('category')->get();
-        return view('admin.subCategory',['subCategory' => $subCategory]);
+         $result = SubCategory::with('category')->get();
+        // $result = Category::with('subCategory')->get();
+        // $result = Post::with('subCategory')->get()->pluck('title', 'subCategoryId');
+
+       dump($result);
+        // return view('admin.subCategory',['subCategory' => $subCategory]);
     }
 
     /**
@@ -83,6 +88,7 @@ class AdminSubCategoryController extends Controller
     public function show($id)
     {
         //
+        return SubCategory::with('getCategory')->findOrFail($id);
     }
 
     /**
@@ -109,8 +115,11 @@ class AdminSubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        // return $request->all();
+
         $request->validate([
-            'subCategory' => 'required|unique:sub_categories,subCategory',
+            'subCategory' => 'required',
             'thumbnail' => 'required',
             'categoryId' => 'required'
         ]);
