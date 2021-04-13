@@ -23,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
 Route::get('admin', function(){
     return view('admin');
 })->name('admin');
@@ -32,14 +36,7 @@ Route::resource('/adminSubCategory', AdminSubCategoryController::class);
 Route::resource('/adminPost', AdminPostController::class);
 
 
-// Route::get('/{any?}', function () {
-//     return view('welcomevue');
-// })->where('any', '^(?!api\/)[\/\w\.\,-]*');
 
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
 
 Route::get('/subCategory/{category}', function ($category) {
 
@@ -51,3 +48,5 @@ Route::get('/subCategory/{category}', function ($category) {
     return view('subCategory', ['subCategoryPosts' => $result]);
 
 })->name('subCategory');
+
+
