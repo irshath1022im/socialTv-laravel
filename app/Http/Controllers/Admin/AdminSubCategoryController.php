@@ -147,5 +147,7 @@ class AdminSubCategoryController extends Controller
     public function destroy($id)
     {
         //
+        $result = SubCategory::where('id', $id)->delete();
+        return redirect()->route('adminSubCategory.index')->with('status', 'SubCategory Deleted ....');
     }
 }
