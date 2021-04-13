@@ -26,11 +26,14 @@
                <td>{{ $item->subCategory}}</td>
                <td>{{ $item->category['category']}}</td>
                <td><img src="{{Storage::url($item->thumbnail)}}"  class="img-fluid w-25"/></td>
-               <td><a href="{{ route('adminCategory.edit',['adminCategory' => $item->id]) }}" >
+               <td class="d-flex">
+                   <a href="{{ route('adminSubCategory.edit', ['adminSubCategory' => $item->id]) }}" >
                     <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                    </a>
+                   </a>
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
                 </td>
-                <td>
+
+                {{-- <td>
                     <form method="post"
                     action="{{route('adminCategory.destroy', ['adminCategory' => $item->id])}}" >
                         @csrf
@@ -38,7 +41,7 @@
                         <button type="submit" class="btn btn-danger btn-sm">Delete</a>
                         </button>
                     </form>
-                </td>
+                </td> --}}
 
            </tr>
            @endforeach

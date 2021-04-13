@@ -22,7 +22,8 @@
                 <li class="list-group-item" style="border-bottom: 4px solid rgba(146,144,234,0.61) ;"><i class="fa fa-book" style="font-size: 22px;width: 30px;color: rgb(241,130,0);"></i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Category</span></li>
             </a>
 
-            <a href="{{route('adminSubCategory.index') }}"><li class="list-group-item" style="border-bottom: 4px solid rgba(146,144,234,0.61) ;"><i class="fa fa-tag" style="font-size: 22px;width: 30px;color: rgb(241,130,0);"></i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">SubCategory</span></li></a>
+            <a href="{{route('adminSubCategory.index') }}">
+                <li class="list-group-item" style="border-bottom: 4px solid rgba(146,144,234,0.61) ;"><i class="fa fa-tag" style="font-size: 22px;width: 30px;color: rgb(241,130,0);"></i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">SubCategory</span></li></a>
 
         <a href="{{ route('adminPost.index') }}" >
             <li class="list-group-item" style="background: rgb(255, 255, 255);"><i class="material-icons" style="font-size: 22px;width: 30px;color: rgb(241,130,0);">airline_seat_flat</i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Post</span></li></a>

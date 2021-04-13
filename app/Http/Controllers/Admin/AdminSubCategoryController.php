@@ -71,7 +71,7 @@ class AdminSubCategoryController extends Controller
             return redirect()->route('adminSubCategory.index')->with('status', 'SubCategory Created ....');
 
 
-        return $request->all();
+        // return $request->all();
     }
 
     /**
@@ -94,6 +94,9 @@ class AdminSubCategoryController extends Controller
     public function edit($id)
     {
         //
+        $categoryList = Category::get();
+        $subCategory = SubCategory::findOrFail($id);
+        return view('forms.createSubCategory', ['categoryList' => $categoryList, 'subCategory' => $subCategory]);
     }
 
     /**
@@ -106,6 +109,33 @@ class AdminSubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'subCategory' => 'required|unique:sub_categories,subCategory',
+            'thumbnail' => 'required',
+            'categoryId' => 'required'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            // dump($request->hasFile('thumbnail'));
+            $file = $request->file('thumbnail');
+            // $file->store('categoryThumbnails');
+            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->category. '.'. $file->guessExtension() );
+
+            // return $file->getClientOriginalExtension();
+        }
+
+
+            $newSubCategory = [
+                 'subCategory' => $request->subCategory,
+                 'thumbnail' => $path,
+                 'categoryId' => $request->categoryId
+                ];
+            SubCategory::where('id', $id)->update($newSubCategory);
+
+            // return view('welcome')->with('status', 'Category Created ....');
+
+            return redirect()->route('adminSubCategory.index')->with('status', 'SubCategory Updated ....');
+
     }
 
     /**
