@@ -24,19 +24,19 @@
                <td scope="row">{{ $item->id}}</td>
                <td>{{ $item->category}}</td>
                <td><img src="{{Storage::url($item->thumbnail)}}"  class="img-fluid w-25"/></td>
-               <td><a href="{{ route('adminCategory.edit',['adminCategory' => $item->id]) }}" >
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
+               <td class="d-flex">
+                   <a href="{{ route('adminCategory.edit',['adminCategory' => $item->id]) }}" >
+                    <button type="button" class="btn btn-primary btn-sm m-1">Edit</button>
                     </a>
-                </td>
-                <td>
+
                     <form method="post"
                     action="{{route('adminCategory.destroy', ['adminCategory' => $item->id])}}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</a>
+                        <button type="submit" class="btn btn-danger btn-sm m-1">Delete</a>
                         </button>
                     </form>
-                </td>
+               </td>
 
            </tr>
            @endforeach

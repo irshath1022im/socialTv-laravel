@@ -29,22 +29,16 @@
         <div class="container" style="margin-top: 33px;background: #ffffff;">
             <div class="row" style="margin-right: 0px;margin-left: 0px;">
                 <div class="col" style="padding: 0px 0px;">
+
                     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="height: 147px;">
                         <div class="container"><a class="navbar-brand" href="#">
-                            <img src="{{ asset('img/Logo.jpg')}}" style="width: 180px;height: 126px;padding: 3px;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                            <div class="collapse navbar-collapse" id="navcol-1">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item" style="background: #e0dcdc;color: rgb(0,0,0);"><a class="nav-link active" href="#" style="color: rgb(0,0,0);font-family: 'Atomic Age', cursive;">Home</a></li>
-                                    <li class="nav-item" style="background: #e0dcdc;color: rgb(0,0,0);"></li>
-                                    <li class="nav-item"></li>
-                                    <li class="nav-item dropdown" style="color: rgb(166,164,163);background: #e0dcdc;margin-left: 2px;"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#" style="font-family: 'Atomic Age', cursive;">Category</a>
-                                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                    </li>
-                                </ul>
-                            </div>
+                            <img src="{{ asset('img/Logo.jpg')}}" style="width: 180px;height: 126px;padding: 3px;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                         </div>
                     </nav>
                 </div>
+
             </div>
 
 

@@ -7,6 +7,8 @@ use App\Category;
 use Admin\AdminCategoryController;
 use Admin\AdminSubCategoryController;
 use Admin\AdminPostController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 use CategoryController;
 use App\SubCategory;
 use Illuminate\Support\Carbon;
@@ -28,18 +30,27 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('admin', function(){
-    return view('admin');
-})->name('admin');
+    return view('/admin');
+})->name('admin')->middleware('auth');
 
-Route::resource('/adminCategory', AdminCategoryController::class);
-Route::resource('/adminSubCategory', AdminSubCategoryController::class);
-Route::resource('/adminPost', AdminPostController::class);
+Route::resource('/adminCategory', AdminCategoryController::class)->middleware('auth');
+Route::resource('/adminSubCategory', AdminSubCategoryController::class)->middleware('auth');
+Route::resource('/adminPost', AdminPostController::class)->middleware('auth');
 
 
 Route::get('/category/{id}', function ($id) {
     // return $id;
     return view('category');
 });
+
+
+// Route::auth();
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+
 
 Route::get('/subCategory/{category}', function ($category) {
 
