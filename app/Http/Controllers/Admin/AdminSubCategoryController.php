@@ -23,8 +23,9 @@ class AdminSubCategoryController extends Controller
         // $result = Category::with('subCategory')->get();
         // $result = Post::with('subCategory')->get()->pluck('title', 'subCategoryId');
 
-       dump($result);
-        // return view('admin.subCategory',['subCategory' => $subCategory]);
+    //    dump($result);
+    //    return $result;
+        return view('admin.subCategory',['subCategory' => $result]);
     }
 
     /**
