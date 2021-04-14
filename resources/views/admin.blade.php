@@ -59,7 +59,7 @@
               </div>
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="button" class="btn btn-primary btn-sm">LogOut</button>
+                <button type="submit" class="btn btn-primary btn-sm">LogOut</button>
             </form>
 
           @endauth

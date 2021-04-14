@@ -3,15 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Category;
 use Admin\AdminCategoryController;
 use Admin\AdminSubCategoryController;
 use Admin\AdminPostController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
-use CategoryController;
-use App\SubCategory;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,12 +38,12 @@ Route::get('/category/{id}', function ($id) {
 });
 
 
-// Route::auth();
+Route::auth();
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+// Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+// Route::post('login', [LoginController::class, 'login']);
+// Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
 
 Route::get('/subCategory/{category}', function ($category) {
