@@ -25,18 +25,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="{{ asset('fonts/ionicons.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/Article-List.css')}}">
         <link rel="stylesheet" href="{{asset('css/Navigation-Clean.css')}}">
         <link rel="stylesheet" href="{{asset('css/Navigation-with-Button.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Social-Icons.css')}}">
         <link rel="stylesheet" href="{{ asset('css/Style.css')}}">
         <link rel="stylesheet" href="{{ asset('css/newBar1.css')}}">
-        <link rel="stylesheet" href="{{ asset('css/Pretty-Footer.css')}}">
         <link rel="stylesheet" href="{{ asset('css/untitled-1.css')}}">
-        <link rel="stylesheet" href="{{ asset('css/Article-Cards.css')}}">
-        <link rel="stylesheet" href="{{ asset('css/Bold-BS4-Cards-with-Hover-Effect-74.css')}}">
         <link rel="stylesheet" href="{{ asset('css/header.css')}}">
-        <link rel="stylesheet" href="{{ asset('css/Responsive-footer.css')}}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/Pretty-Footer.css')}}"> --}}
+        {{-- <link rel="stylesheet" href="{{ asset('css/Responsive-footer.css')}}"> --}}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script data-ad-client="ca-pub-9931371849873169" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

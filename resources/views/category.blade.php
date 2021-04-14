@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    @dump($news)
 
-    @component('components.flashNews', ['category' => $result, 'topNews' => $topNews])
+    <h4>Category: CATEGORY</h4>
+    {{-- @dump($news)
 
-        @endcomponent
+    @component('components.flashNews', ['category' => $result, 'topNews' => $topNews]) --}}
+
+    {{-- @endcomponent --}}
 @endsection

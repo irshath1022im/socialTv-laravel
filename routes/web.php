@@ -36,7 +36,10 @@ Route::resource('/adminSubCategory', AdminSubCategoryController::class);
 Route::resource('/adminPost', AdminPostController::class);
 
 
-
+Route::get('/category/{id}', function ($id) {
+    // return $id;
+    return view('category');
+});
 
 Route::get('/subCategory/{category}', function ($category) {
 
