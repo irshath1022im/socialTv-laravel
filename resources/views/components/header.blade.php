@@ -17,7 +17,6 @@
         <h1 class="d-flex d-xl-flex align-items-end align-items-sm-end align-items-md-end align-items-lg-center align-items-xl-end bounce animated header-banner-heading">உண்மையின் தேடல் மக்களின் குரல்<br></h1>
     </div>
 
-    @component('components.navbar')
-    @endcomponent
+    @livewire('nav-bar')
 
 </section>
