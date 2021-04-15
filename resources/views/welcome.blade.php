@@ -16,6 +16,11 @@
 
         @endcomponent
 
+        <socialtv-ads >
+
+        </socialtv-ads>
+
+
         {{-- @component('components.buySale')
 
         @endcomponent --}}

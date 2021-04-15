@@ -32,8 +32,9 @@
         <link rel="stylesheet" href="{{ asset('css/newBar1.css')}}">
         <link rel="stylesheet" href="{{ asset('css/untitled-1.css')}}">
         <link rel="stylesheet" href="{{ asset('css/header.css')}}">
-        {{-- <link rel="stylesheet" href="{{ asset('css/Pretty-Footer.css')}}"> --}}
-        {{-- <link rel="stylesheet" href="{{ asset('css/Responsive-footer.css')}}"> --}}
+
+        <link rel="stylehseet" href="{{ asset('css/app.css') }}" />
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script data-ad-client="ca-pub-9931371849873169" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -55,7 +56,7 @@
     </head>
     <body class="container">
 
-
+        <div id="app">
        {{-- @livewire('nav-bar') --}}
        @component('components.header')
 
@@ -71,9 +72,11 @@
 
        @endcomponent
 
+        </div>
+
         <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
+        <script src="{{ asset('js/app.js')}}"> </script>
 
         <script>(function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];

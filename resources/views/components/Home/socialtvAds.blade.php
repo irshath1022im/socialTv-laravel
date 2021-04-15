@@ -3,7 +3,7 @@
         <h5 style="color: rgb(255,255,255);font-family: 'Atomic Age', cursive;font-size: 17px;padding: 4px;margin-right: 3px;margin-left: 22px;">SocialTV Ads......</h5>
     </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    {{-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="{{ asset('img/socialtvads1.jpg')}}" alt="First slide">
@@ -23,6 +23,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> --}}
 
 </section>
