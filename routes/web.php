@@ -27,6 +27,8 @@ Route::get('admin', function(){
     return view('/admin');
 })->name('admin')->middleware('auth');
 
+Route::get('/posts/{id}', [PostController::class, 'post'])->name('post');
+
 Route::resource('/adminCategory', AdminCategoryController::class)->middleware('auth');
 Route::resource('/adminSubCategory', AdminSubCategoryController::class)->middleware('auth');
 Route::resource('/adminPost', AdminPostController::class)->middleware('auth');
@@ -39,6 +41,7 @@ Route::get('/category/{id}', function ($id) {
 
 
 Route::auth();
+
 
 // Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 // Route::post('login', [LoginController::class, 'login']);
