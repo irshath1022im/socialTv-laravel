@@ -12,15 +12,10 @@
 
         @livewire('home-recent-post')
 
-        @component('components.Home.socialtvAds')
+        {{-- @component('components.Home.socialtvAds')
 
-        @endcomponent
-
-        <socialtv-ads >
-
-        </socialtv-ads>
-
-
+        @endcomponent --}}
+        @livewire('home-page-social-ads')
         {{-- @component('components.buySale')
 
         @endcomponent --}}

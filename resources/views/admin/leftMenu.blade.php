@@ -27,6 +27,10 @@
 
         <a href="{{ route('adminPost.index') }}" >
             <li class="list-group-item" style="background: rgb(255, 255, 255);"><i class="material-icons" style="font-size: 22px;width: 30px;color: rgb(241,130,0);">airline_seat_flat</i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Post</span></li></a>
+        <a href="{{ route('adminAds.index') }}" >
+                <li class="list-group-item" style="background: rgb(255, 255, 255);"><i class="material-icons" style="font-size: 22px;width: 30px;color: rgb(241,130,0);">airline_seat_flat</i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Ads</span></li></a>
+        <a href="{{ route('adminPost.index') }}" >
+                    <li class="list-group-item" style="background: rgb(255, 255, 255);"><i class="material-icons" style="font-size: 22px;width: 30px;color: rgb(241,130,0);">airline_seat_flat</i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Videos</span></li></a>
     </ul>
 </div>
 
