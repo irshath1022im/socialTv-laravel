@@ -83,8 +83,6 @@ class AdminPostController extends Controller
     public function show($id)
     {
         //
-        $result = Post::findOrFail($id);
-        return view('post', ['post' => $result]);
 
     }
 
