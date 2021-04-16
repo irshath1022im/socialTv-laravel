@@ -12,6 +12,6 @@ class HomeAdds extends Component
     {
 
         // $this->emit('getCategoryPosts');
-        return view('livewire.home-adds', );
+        return view('livewire.home-adds');
     }
 }
