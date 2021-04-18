@@ -14,7 +14,11 @@ class HomeRecentPost extends Component
 
     public function render()
     {
-        $result = Post::with('subcategory')->orderByDesc('id')->paginate(10);
+        $result = Post::with(['subCategory' => function($query) {
+            return $query->with('category')->get();
+                        }])
+                   ->orderByDesc('created_at')
+                   ->paginate(10);
         return view('livewire.home-recent-post', ['posts'=>$result]);
     }
 }

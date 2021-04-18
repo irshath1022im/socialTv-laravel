@@ -20,5 +20,10 @@ class Post extends Model
         return $this->belongsTo(SubCategory::class, 'subCategoryId');
     }
 
+    public function category()
+    {
+        return $this->hasOneThrough('App\Category', 'App\SubCategory', 'categoryId','id','subCategoryId');
+    }
+
 
 }

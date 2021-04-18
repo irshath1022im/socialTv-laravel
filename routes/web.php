@@ -7,6 +7,7 @@ use Admin\AdminPostController;
 use Admin\AdminCategoryController;
 use Admin\AdminSubCategoryController;
 use Admin\AdsController;
+use App\SubCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,4 +63,12 @@ Route::get('/subCategory/{category}', function ($category) {
 
 })->name('subCategory');
 
+
+Route::get('/test', function(){
+    return Post::with(['subCategory' => function($query) {
+        return $query->with('category')->get();
+    }])
+                ->get()
+                ->take(5);
+});
 
