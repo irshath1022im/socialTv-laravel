@@ -11,10 +11,10 @@
             <h5 style="font-family: 'Arima Madurai', cursive;font-size: 15px;margin-top: 5px;">{{$post->title}}</h5>
             <div class="float-right">
 
-                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;" href="#" target="_blank">
+                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;" href="#">
                     {{ $post->subCategory->category->category}}
                 </a>
-                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;margin-left: 4px;" href="#" target="_blank">
+                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;margin-left: 4px;" href="#" >
                     {{ $post->subCategory->subCategory}}
                 </a>
 

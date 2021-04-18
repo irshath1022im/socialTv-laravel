@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
+use App\SubCategory;
+use Admin\AdsController;
 use Admin\AdminPostController;
 use Admin\AdminCategoryController;
 use Admin\AdminSubCategoryController;
-use Admin\AdsController;
-use App\SubCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,11 +65,18 @@ Route::get('/subCategory/{category}', function ($category) {
 })->name('subCategory');
 
 
-Route::get('/test', function(){
-    return Post::with(['subCategory' => function($query) {
-        return $query->with('category')->get();
-    }])
-                ->get()
-                ->take(5);
-});
+// Route::get('/test', function(){
+// //   $query = post::with(['subCategory' => function($query)
+// //             {
+// //                 return $query->with('posts')->take(2);
+// //             }])->findOrFail(56);
+
+//             $query = Post::findOrFail(56);
+
+//             dump( $query->subCategory()->with('posts')->get());
+
+
+
+//     // return $query;
+// });
 
