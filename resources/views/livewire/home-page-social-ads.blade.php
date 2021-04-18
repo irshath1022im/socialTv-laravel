@@ -5,7 +5,7 @@
             @foreach ($ads as $key => $item)
 
                 <div class="carousel-item {{ $key === 0 ? 'active' : null}}">
-                    <img class="d-block img-fluid w-100" src="{{ Storage::url($item->imagePath) }}" alt="First slide" >
+                    <img class="d-block img-fluid w-100 " src="{{ Storage::url($item->imagePath) }}" alt="First slide" >
                 </div>
 
                 @endforeach
