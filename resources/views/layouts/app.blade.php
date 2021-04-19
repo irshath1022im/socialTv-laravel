@@ -89,6 +89,7 @@
         <script>
             window.addEventListener('changeUrl', event => {
                 window.history.pushState(null,null,`/posts/${event.detail}`);
+                document.documentElement.scrollTop = 0;
             })
         </script>
 
