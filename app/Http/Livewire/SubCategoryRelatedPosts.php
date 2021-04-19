@@ -12,7 +12,10 @@ class SubCategoryRelatedPosts extends Component
     public function mount($subCategoryId)
     {
         $this->subCategoryId = $subCategoryId;
+
     }
+
+
 
     public function render()
     {

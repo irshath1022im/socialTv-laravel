@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Category;
-use App\SubCategory;
 use Admin\AdsController;
 use Admin\AdminPostController;
 use Admin\AdminCategoryController;
@@ -31,6 +29,7 @@ Route::get('admin', function(){
 })->name('admin')->middleware('auth');
 
 Route::get('/posts/{id}', [PostController::class, 'post'])->name('post');
+
 
 Route::resource('/adminCategory', AdminCategoryController::class)->middleware('auth');
 Route::resource('/adminSubCategory', AdminSubCategoryController::class)->middleware('auth');

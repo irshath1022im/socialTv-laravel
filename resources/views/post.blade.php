@@ -3,25 +3,19 @@
 @section('content')
 
         <div class="row">
+
+            {{-- post colum--}}
+
             <div class="col-md-8">
+                {{-- @dump($subCategoryId) --}}
 
-                <h3>{{$post->title}}</h3>
-
-                <div>
-                   <img class="img-fluid w-50" src="{{ Storage::url($post->thumbnail) }}" />
-                </div>
-
-                <div>
-
-              {!! $post->content !!}
-                </div>
-
-                <div class="fb-share-button"
-                data-href=" {{ url('http://www.socialtv24.info/adminPost/'.$post->id)}}"
-                data-layout="button_count">
-                </div>
+                @livewire('single-post', ['postId' => $postId])
 
             </div>
+
+   {{-- sub-category-related-posts --}}
+
+
 
             <div class="col-md-4">
 
@@ -30,7 +24,7 @@
                     <h5 style="color: rgb(255,255,255);font-family: 'Atomic Age', cursive;font-size: 17px;padding: 5px;margin-right: 3px;margin-left: 22px;">Related Posts</h5>
                 </div>
 
-                @livewire('sub-category-related-posts',['subCategoryId' => $post->subCategoryId])
+                @livewire('sub-category-related-posts',['subCategoryId' => $subCategoryId])
             </div>
         </div>
 

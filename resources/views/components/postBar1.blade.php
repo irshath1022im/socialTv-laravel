@@ -18,7 +18,15 @@
                     {{ $post->subCategory->subCategory}}
                 </a>
 
-                <a class="btn btn-info btn-sm" role="button" style="font-size: 10px;" href="{{ route('post', ['id' => $post->id])}}" target="_blank">மேலும் படிக்க&nbsp;</a></div>
+
+                {{-- @dump(Str::contains(Request::path(), 'posts' )) --}}
+                <a class="btn btn-info btn-sm" role="button" style="font-size: 10px;"
+                    @if (Str::contains(Request::path(), 'posts' ))
+                        wire:click="$emit('getThePost', {{$post->id }})"
+                    @else
+                    href="{{ route('post', ['id' => $post->id])}}" target="_blank"
+                    @endif
+                    >மேலும் படிக்க&nbsp;</a></div>
 
 
 

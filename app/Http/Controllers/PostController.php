@@ -22,7 +22,7 @@ class PostController extends Controller
 
             $post = Post::findOrFail($id);
 
-        return view('post', ['post' => $post]);
+        return view('post', ['postId' => $post->id, 'subCategoryId' => $post->subCategoryId]);
 
     }
 }

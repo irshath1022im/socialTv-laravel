@@ -86,5 +86,11 @@
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 
+        <script>
+            window.addEventListener('changeUrl', event => {
+                window.history.pushState(null,null,`/posts/${event.detail}`);
+            })
+        </script>
+
     </body>
 </html>
