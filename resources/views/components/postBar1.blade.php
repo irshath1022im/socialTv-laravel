@@ -11,14 +11,22 @@
             <h5 style="font-family: 'Arima Madurai', cursive;font-size: 15px;margin-top: 5px;">{{$post->title}}</h5>
             <div class="float-right">
 
-                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;" href="#" target="_blank">
+                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;" href="#">
                     {{ $post->subCategory->category->category}}
                 </a>
-                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;margin-left: 4px;" href="#" target="_blank">
+                <a class="btn btn-success btn-sm text-uppercase" role="button" style="font-size: 10px;margin-left: 4px;" href="#" >
                     {{ $post->subCategory->subCategory}}
                 </a>
 
-                <a class="btn btn-info btn-sm" role="button" style="font-size: 10px;" href="{{ route('post', ['id' => $post->id])}}" target="_blank">மேலும் படிக்க&nbsp;</a></div>
+
+                {{-- @dump(Str::contains(Request::path(), 'posts' )) --}}
+                <a class="btn btn-info btn-sm" role="button" style="font-size: 10px;"
+                    @if (Str::contains(Request::path(), 'posts' ))
+                        wire:click="$emit('getThePost', {{$post->id }})"
+                    @else
+                    href="{{ route('post', ['id' => $post->id])}}" target="_blank"
+                    @endif
+                    >மேலும் படிக்க&nbsp;</a></div>
 
 
 

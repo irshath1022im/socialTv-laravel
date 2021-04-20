@@ -86,5 +86,18 @@
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 
+        <script>
+            window.addEventListener('changeUrl', event => {
+                window.history.pushState(null,null,`/posts/${event.detail}`);
+                document.documentElement.scrollTop = 0;
+            })
+        </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        Livewire.hook('component.initialized', (component) => { console.log(component)})
+    });
+</script>
+
     </body>
 </html>

@@ -63,7 +63,10 @@
         <!-- JavaScript Bundle with Popper -->
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
             <script>
-                CKEDITOR.replace( 'summary-ckeditor' );
+                CKEDITOR.replace( 'summary-ckeditor', {
+                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+});
             </script>
         <script src="{{ asset('js/jquery.min.js')}}"></script>
         <script src="{{ asset('js/bootstrap.min.js')}}"></script>

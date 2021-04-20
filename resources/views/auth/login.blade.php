@@ -1,10 +1,4 @@
 
-@extends('layouts.admin')
-
-
-@section('content')
-
-
     @component('components.notification')
 
     @endcomponent
@@ -40,4 +34,3 @@
 
         </div>
     </div>
-    @endsection
