@@ -93,5 +93,11 @@
             })
         </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        Livewire.hook('component.initialized', (component) => { console.log(component)})
+    });
+</script>
+
     </body>
 </html>

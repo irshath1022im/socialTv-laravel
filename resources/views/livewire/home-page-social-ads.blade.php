@@ -1,5 +1,9 @@
 {{-- @dump($ads) --}}
 <div>
+    <div style="height: 40px;background: linear-gradient(92deg, rgb(5,30,162) 16%, rgb(4,13,59) 51%), #2256a6;padding: -3px;">
+        <h5 style="color: rgb(255,255,255);font-family: 'Atomic Age', cursive;font-size: 17px;padding: 4px;margin-right: 3px;margin-left: 22px;">SocialTV Ads......</h5>
+    </div>
+
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @foreach ($ads as $key => $item)
