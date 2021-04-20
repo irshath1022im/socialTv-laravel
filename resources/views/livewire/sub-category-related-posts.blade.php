@@ -19,6 +19,10 @@
 
     @endcomponent
 
+
     @endforeach
+
+    {{-- <button type="button" class="btn btn-outline-primary">Load More</button> --}}
+    {{ $relatedPosts->links()}}
 
 </div>

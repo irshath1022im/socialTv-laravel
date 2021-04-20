@@ -4,10 +4,13 @@ namespace App\Http\Livewire;
 
 use App\Post;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class SubCategoryRelatedPosts extends Component
 {
     public $subCategoryId;
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     public function mount($subCategoryId)
     {
@@ -20,6 +23,6 @@ class SubCategoryRelatedPosts extends Component
     public function render()
     {
         return view('livewire.sub-category-related-posts',[
-            'relatedPosts' => Post::where('subCategoryId', $this->subCategoryId)->orderByDesc('created_at')->get()->take(5)]);
+            'relatedPosts' => Post::where('subCategoryId', $this->subCategoryId)->orderByDesc('created_at')->simplePaginate(5)]);
     }
 }
