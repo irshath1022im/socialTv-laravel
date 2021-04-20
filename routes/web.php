@@ -45,6 +45,7 @@ Route::get('/category/{id}', function ($id) {
 
 Route::auth();
 
+Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
 // Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 // Route::post('login', [LoginController::class, 'login']);
