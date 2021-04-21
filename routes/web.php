@@ -65,18 +65,13 @@ Route::get('/subCategory/{category}', function ($category) {
 })->name('subCategory');
 
 
-// Route::get('/test', function(){
-// //   $query = post::with(['subCategory' => function($query)
-// //             {
-// //                 return $query->with('posts')->take(2);
-// //             }])->findOrFail(56);
+Route::get('/test', function(){
+    $result = Post::with(['subCategory' => function($query) {
+        return $query->with('category')->get();
+                    }])
+               ->orderByDesc('created_at')
+               ->paginate(10);
 
-//             $query = Post::findOrFail(56);
-
-//             dump( $query->subCategory()->with('posts')->get());
-
-
-
-//     // return $query;
-// });
+               return $result;
+});
 

@@ -17,8 +17,8 @@ class AdminCategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::get();
-        return view('admin.category', ['categories' => $categories]);
+        // $categories = Category::get();
+        return view('admin.category');
     }
 
     /**
