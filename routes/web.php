@@ -1,14 +1,15 @@
 <?php
 
-// namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Post;
-use Controllers\Admin\AdsController;
-use Livewire\Admin\Categories;
-use Controllers\Admin\AdminSubCategoryController;
-use App\Http\Controllers\PostController;
-use Controllers\Admin\AdminPostController;
+use livewire;
+use Admin\AdsController;
+use Admin\AdminPostController;
+use Admin\AdminSubCategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\Categories;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,8 @@ Route::get('admin', function(){
 
 Route::get('/posts/{id}', [PostController::class, 'post'])->name('post');
 
-Route::get('/adminCategory', Categories::class)->name('adminCategory')->middleware('auth');
+Route::get('/adminCategory','Admin\CategoryController@index')->name('adminCategory')->middleware('auth');
+
 Route::resource('/adminSubCategory', AdminSubCategoryController::class)->middleware('auth');
 Route::resource('/adminPost', AdminPostController::class)->middleware('auth');
 Route::resource('/adminAds', AdsController::class)->middleware('auth');
@@ -46,12 +48,6 @@ Route::get('/category/{id}', function ($id) {
 Route::auth();
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
-
-// Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('login', [LoginController::class, 'login']);
-// Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-// Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-
 
 Route::get('/subCategory/{category}', function ($category) {
 
