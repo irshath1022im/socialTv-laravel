@@ -27,39 +27,15 @@
     <body style="background: linear-gradient(-156deg, rgb(75,104,254) 0%, rgb(51,0,255) 100%, rgb(5,0,255) 100%), var(--purple);height: 0; font-family: Raleway">
 
         <div class="container" style="margin-top: 33px;background: #ffffff;">
-            <div class="row" style="margin-right: 0px;margin-left: 0px;">
-                <div class="col" style="padding: 0px 0px;">
 
-                    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="height: 147px;">
-                        <div class="container"><a class="navbar-brand" href="#">
-                            <img src="{{ asset('img/Logo.jpg')}}" style="width: 180px;height: 126px;padding: 3px;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                    </nav>
-                </div>
+                @component('admin.leftMenu')
 
-            </div>
-
-
-            <div class="row" style="margin: 0px 0px;">
-
-             @component('admin.leftMenu')
-
-             @endcomponent
-
-             <div class="col-sm-8 col-md-8" style="padding-left: 10px;background: #ffffff;">
+                @endcomponent
 
                 @yield('content')
 
-            </div>
-
-
-
-
         </div>
 
-        </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
             <script>
@@ -86,10 +62,11 @@
             document.addEventListener('closeDeleteModal', event =>{
                 $('#deleteModal').modal('hide');
             })
-
-
-
         </script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
     </body>
 </html>
 
