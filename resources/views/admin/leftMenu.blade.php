@@ -18,7 +18,7 @@
             <li class="list-group-item" style="border-bottom: 4px solid rgba(146,144,234,0.61) ;"><i class="fa fa-home" style="font-size: 22px;width: 30px;color: rgb(241,130,0);"></i>
             <span style="font-family: Alatsi, sans-serif;font-size: 18px;">Home</span></li></a>
 
-            <a href="{{route('adminCategory.index') }}">
+            <a href="{{route('adminCategory') }}">
                 <li class="list-group-item" style="border-bottom: 4px solid rgba(146,144,234,0.61) ;"><i class="fa fa-book" style="font-size: 22px;width: 30px;color: rgb(241,130,0);"></i><span style="font-family: Alatsi, sans-serif;font-size: 18px;">Category</span></li>
             </a>
 

@@ -14,12 +14,13 @@ class CategoryForm extends Component
     public $editCategoryId;
     public $editCategory;
     public $formMode;
+    public $oldThumbnail;
     use WithFileUploads;
 
     protected $listeners=[
         'editCategoryRequest',
         'resetEditCategoryId',
-        'updateFormMode'
+        'updateFormMode',
     ];
 
     protected $rules = [
@@ -65,10 +66,10 @@ class CategoryForm extends Component
         $result = Category::findOrFail($categoryId);
         $this->category= $result->category;
         $this->thumbnail = $result->thumbnail;
+        $this->oldThumbnail = $result->thumbnail;
         $this->dispatchBrowserEvent('showCategoryForm');
 
     }
-
 
 
 
@@ -85,7 +86,7 @@ class CategoryForm extends Component
             session()->flash('status','New Category Added');
             $this->resetForm();
         } elseif($this->formMode === 'edit'){
-            if($this->thumbnail !== $this->thumbnail){
+            if($this->thumbnail !== $this->oldThumbnail){
                 $this->file = $this->thumbnail->store('categoryThumbnails', 'public');
             }else {
                 $this->file = $this->thumbnail;
@@ -94,7 +95,7 @@ class CategoryForm extends Component
             $data =['category' => $this->category, 'thumbnail' => $this->file];
             Category::where('id', $this->editCategoryId)->update($data);
             session()->flash('status','Updated');
-            $this->resetForm();
+            $this->oldThumbnail='';
         }
     }
 

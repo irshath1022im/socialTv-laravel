@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="{{ asset('css/Login-Form-Clean.css')}}">
         <link rel="stylesheet" href="{{ asset('css/postForm.css')}}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer>
         </script>
 
         @livewireStyles
@@ -76,10 +75,20 @@
             // document.addEventListener('showEditCategoryForm', event => {
             //     $('#editCategoryForm').modal('show');
             // })
-
             document.addEventListener('showCategoryForm', event =>{
                 $('#categoryForm').modal('show');
             })
+
+            document.addEventListener('showDeleteModal', event =>{
+                $('#deleteModal').modal('show');
+            })
+
+            document.addEventListener('closeDeleteModal', event =>{
+                $('#deleteModal').modal('hide');
+            })
+
+
+
         </script>
     </body>
 </html>

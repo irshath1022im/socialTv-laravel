@@ -1,10 +1,18 @@
 <div>
 
-    <button type="button" class="btn btn-primary"  wire:click="createCategory">
+    <button type="button" class="btn btn-primary"  wire:click="createCategory" wire:loading.attr="disabled">
         Add New Category
       </button>
 
-    <table class="table">
+
+      <div wire:loading wire:target="closeCategoryForm">
+        <div class="alert alert-info" role="alert">
+            <strong>Updating Categories....</strong>
+        </div>
+      </div>
+
+
+      <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -21,20 +29,12 @@
                 {{-- @dump($item->thumbnail) --}}
                 <td><img src="{{Storage::url($item->thumbnail)}}"  class="img-fluid w-25"/></td>
                 <td class="d-flex">
-                    {{-- <a href="{{ route('adminCategory.edit',['adminCategory' => $item->id]) }}" >
-                     <button type="button" class="btn btn-primary btn-sm m-1">Edit</button>
-                     </a> --}}
+                     <button type="button" class="btn btn-primary btn-sm m-1"
+                     wire:click="editCategoryRequest({{ $item->id}})">
+                     Edit</button>
 
-
-                     <button type="button" class="btn btn-primary btn-sm m-1" wire:click="editCategoryRequest({{ $item->id}})">Edit</button>
-
-                     <form method="post"
-                     action="{{route('adminCategory.destroy', ['adminCategory' => $item->id])}}" >
-                         @csrf
-                         @method('DELETE')
-                         <button type="submit" class="btn btn-danger btn-sm m-1">Delete</a>
-                         </button>
-                     </form>
+                     <button type="submit" class="btn btn-danger btn-sm m-1"
+                     wire:click='deleteCategoryRequest({{$item->id}})'>Delete</button>
                 </td>
 
             </tr>
@@ -61,8 +61,34 @@
         </div>
     </div>
     </div>
+    </div>
+
+     <!-- Modal for delete-->
+
+
+   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true" data-backdrop="false" >
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header bg-danger">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Category</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" wire:click="closeCategoryForm">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        </div>
+        <div class="modal-body">
+
+           Do You want process ? {{ $deleteCategoryId}}
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" wire:click="deleteCategory">Delete</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" wire:click="closeCategoryForm">Close</button>
+          </div>
+    </div>
+    </div>
+    </div>
+
 </div>
 
-
-
-</div>

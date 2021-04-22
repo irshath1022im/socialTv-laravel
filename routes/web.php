@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 
 use App\Post;
-use Admin\AdsController;
-use Admin\AdminPostController;
-use Admin\AdminCategoryController;
-use Admin\AdminSubCategoryController;
+use Controllers\Admin\AdsController;
+use Livewire\Admin\Categories;
+use Controllers\Admin\AdminSubCategoryController;
+use App\Http\Controllers\PostController;
+use Controllers\Admin\AdminPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +31,7 @@ Route::get('admin', function(){
 
 Route::get('/posts/{id}', [PostController::class, 'post'])->name('post');
 
-
-Route::resource('/adminCategory', AdminCategoryController::class)->middleware('auth');
+Route::get('/adminCategory', Categories::class)->name('adminCategory')->middleware('auth');
 Route::resource('/adminSubCategory', AdminSubCategoryController::class)->middleware('auth');
 Route::resource('/adminPost', AdminPostController::class)->middleware('auth');
 Route::resource('/adminAds', AdsController::class)->middleware('auth');

@@ -26,5 +26,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+
+        Gate::define('deleteCategory', function($user){
+            return $user->name == 'master';
+        });
     }
 }
