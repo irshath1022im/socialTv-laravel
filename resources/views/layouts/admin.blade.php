@@ -14,12 +14,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atomic+Age">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
         <link rel="stylesheet" href="{{ asset('css/Login-Form-Clean.css')}}">
         <link rel="stylesheet" href="{{ asset('css/postForm.css')}}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+        </script>
 
         @livewireStyles
         @livewireScripts
@@ -68,8 +68,28 @@
                 filebrowserUploadMethod: 'form'
 });
             </script>
+
         <script src="{{ asset('js/jquery.min.js')}}"></script>
         <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+        <script>
+            // document.addEventListener('showEditCategoryForm', event => {
+            //     $('#editCategoryForm').modal('show');
+            // })
+            document.addEventListener('showCategoryForm', event =>{
+                $('#categoryForm').modal('show');
+            })
+
+            document.addEventListener('showDeleteModal', event =>{
+                $('#deleteModal').modal('show');
+            })
+
+            document.addEventListener('closeDeleteModal', event =>{
+                $('#deleteModal').modal('hide');
+            })
+
+
+
+        </script>
     </body>
 </html>
 

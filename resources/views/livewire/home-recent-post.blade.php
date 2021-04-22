@@ -13,6 +13,8 @@
 
             <div class="d-flex flex-wrap justify-content-around" style="border-style: none;padding: 0px;padding-right: 0px;padding-left: 0px;">
 
+                {{-- @dump($posts) --}}
+
                 @foreach ($posts as $post)
 
                     @component('components.postBar1',['post'=>$post])
