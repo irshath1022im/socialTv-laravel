@@ -21,4 +21,5 @@
     data-href=" {{ url('http://www.socialtv24.info/adminPost/'.$post->id)}}"
     data-layout="button_count">
     </div>
+
 </div>
