@@ -1,9 +1,16 @@
+@extends('layouts.admin')
+
+
+@section('content')
+
 
     @component('components.notification')
 
     @endcomponent
 
     <div class="row">
+
+
         <div class="col">
           @guest
               <section class="login-clean" style="padding-top: 31px;">
@@ -19,18 +26,6 @@
                   </form>
               </section>
           @endguest
-
-          @auth
-              <div class="alert alert-info" role="alert">
-                  <strong class="text-uppercase">Loged As : {{ Auth::user()->name }}</strong>
-              </div>
-
-              <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="btn btn-primary btn-sm submit">LogOut</button>
-            </form>
-
-          @endauth
-
         </div>
     </div>
+    @endsection

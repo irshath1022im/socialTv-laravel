@@ -28,9 +28,13 @@
 
         <div class="container" style="margin-top: 33px;background: #ffffff;">
 
-                @component('admin.leftMenu')
+               <div>
+                    @component('admin.leftMenu')
 
-                @endcomponent
+                    @endcomponent
+                </div>
+
+
 
                 @yield('content')
 

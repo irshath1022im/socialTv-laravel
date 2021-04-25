@@ -27,18 +27,6 @@
                   </form>
               </section>
           @endguest
-
-          @auth
-              <div class="alert alert-info" role="alert">
-                  <strong class="text-uppercase">Loged As : {{ Auth::user()->name }}</strong>
-              </div>
-              <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="btn btn-primary btn-sm">LogOut</button>
-            </form>
-
-          @endauth
-
         </div>
     </div>
     @endsection
