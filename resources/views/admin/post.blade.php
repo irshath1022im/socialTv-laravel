@@ -5,17 +5,80 @@
 
     @endcomponent
 
-<section class="post">
-    <a name="" id="" class="btn btn-primary" href="{{ route( 'adminPost.create')}}" role="button">New Post</a>
+<section class="">
+    <a name="" id="" class="" href="{{ route( 'adminPost.create')}}" role="button">New Post</a>
 
-    <ul class="list-group post-lists">
+    <table class="table table-bordered table-inverse table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Post Id</th>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Created At</th>
+            </tr>
+            </thead>
+            <tbody>
+
+    @foreach ($posts as $post)
+                <tr>
+                    <td scope="row">{{ $post->id}}</td>
+                    <td><img class ="w-25" src="{{ Storage::url($post->thumbnail)}}"/></td>
+                    <td>{{ $post->title}}</td>
+                    <td>{{ $post->created_at->diffForHumans()}}</td>
+                    <td class="d-flex flex-wrap">
+                        <a class="mr-2" href="{{ route('adminPost.edit',['adminPost' => $post->id])}}">
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        </a>
+
+                        <form method="post" action="{{ route('adminPost.destroy',['adminPost' => $post->id])}}">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+
+
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+    </table>
+
+    {{-- @foreach ($posts as $post)
+    <div class="row p-2">
+        <div class="col-1">
+            <span>{{ $post->id}}</span>
+        </div>
+        <div class="col-1">
+            <span><img class ="w-25" src="{{ Storage::url($post->thumbnail)}}"/></span>
+        </div>
+        <div class="col">
+                <p>{{ $post->title}}</p>
+                 <div class="d-flex">
+                    <span class="btn btn-primary btn-sm text-muted text-small">{{ $post->subCategory->subCategory }}</span>
+                    <span class="bg-info text-muted text-small">{{ $post->created_at->diffForHumans()}}</span>
+                    <span class="bg-info text-muted text-small">{{ $post->updated_at ->diffForHumans()}} </span>
+                 </div>
+        </div>
+        <div class="col-1 d-flex">
+            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+        </div>
+    </div>
+    <hr/>
+    @endforeach --}}
+
+    {{ $posts->links()}}
+
+
+    {{-- <ul class="">
 
         @foreach ($posts as $post)
 
-        <li class="list-group-item post-list" style="background: rgb(224,224,224);">
-            <div class="flex-wrap">
-                <p style="font-family: Raleway, sans-serif;font-size: 15PX;padding: 4px;">{{$post->title }}</p>
-                <span style="color: rgb(0,95,197);font-family: Raleway, sans-serif;font-size: 14px;text-align: center;">{{$post->created_at->diffForHumans()}}</span>
+        <li class="" >
+            <div >
+                <p >{{$post->title }}</p>
+                <spa>{{$post->created_at->diffForHumans()}}</span>
                 <a href="{{ route('adminPost.edit',['adminPost' => $post->id])}}">
                     <i class="fa fa-edit d-inline" style="padding: 8px;width: 30px;color: var(--blue);"></i></a>
 
@@ -23,8 +86,8 @@
                         @csrf
                         @method('DELETE')
 
-                        <button>
-                            <i class="fa fa-remove border-danger" style="padding: 8px;width: 30px;color: var(--red);"></i>
+                        <button type="submit">
+                          Remove
                         </button>
                     </form>
 
@@ -36,17 +99,8 @@
         @endforeach
 
         {{ $posts->links()}}
-        {{-- <li class="list-group-item" style="background: rgb(224,224,224);">
-            <div class="flex-wrap">
-                <p style="font-family: Raleway, sans-serif;font-size: 15PX;padding: 4px;">Welcome kdto idpost 21kdodsakif lsierkldj ldifdkls dlkdfoakd dlsahfoiek sdkoaskire odskijrfoei dk sjlisdhjfowesi rhjklsdjfowerikdfjoewrjofijewodjnofsk dlesfoiweldksfjaoqakld osawei rewojdlskolkdhjsfow qaekd solharwpoqweirh[ OID POQKF JPJDEIKASI  </p><span style="color: rgb(0,95,197);font-family: Raleway, sans-serif;font-size: 14px;text-align: center;">2021-02-25</span><i class="fa fa-edit d-inline" style="padding: 8px;width: 30px;color: var(--blue);"></i><i class="fa fa-remove border-danger" style="padding: 8px;width: 30px;color: var(--red);"></i>
-            </div>
-        </li>
-        <li class="list-group-item" style="background: rgb(224,224,224);">
-            <div class="flex-wrap">
-                <p style="font-family: Raleway, sans-serif;font-size: 15PX;padding: 4px;">Welcome kdto idpost 21kdodsakif lsierkldj ldifdkls dlkdfoakd dlsahfoiek sdkoaskire odskijrfoei dk sjlisdhjfowesi rhjklsdjfowerikdfjoewrjofijewodjnofsk dlesfoiweldksfjaoqakld osawei rewojdlskolkdhjsfow qaekd solharwpoqweirh[ OID POQKF JPJDEIKASI  </p><span style="color: rgb(0,95,197);font-family: Raleway, sans-serif;font-size: 14px;text-align: center;">2021-02-25</span><i class="fa fa-edit d-inline" style="padding: 8px;width: 30px;color: var(--blue);"></i><i class="fa fa-remove border-danger" style="padding: 8px;width: 30px;color: var(--red);"></i>
-            </div>
-        </li> --}}
-    </ul>
+
+    </ul> --}}
 </section>
 
 @endsection

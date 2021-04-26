@@ -49,6 +49,8 @@ class AdminSubCategoryController extends Controller
     public function store(Request $request)
     {
         //
+
+        // return $request->all();
         $request->validate([
             'subCategory' => 'required|unique:sub_categories,subCategory',
             'thumbnail' => 'required',
@@ -59,7 +61,7 @@ class AdminSubCategoryController extends Controller
             // dump($request->hasFile('thumbnail'));
             $file = $request->file('thumbnail');
             // $file->store('categoryThumbnails');
-            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->category. '.'. $file->guessExtension() );
+            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->subCategory. '.'. $file->guessExtension() );
 
             // return $file->getClientOriginalExtension();
         }
@@ -129,7 +131,7 @@ class AdminSubCategoryController extends Controller
             // dump($request->hasFile('thumbnail'));
             $file = $request->file('thumbnail');
             // $file->store('categoryThumbnails');
-            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->category. '.'. $file->guessExtension() );
+            $path = Storage::disk('public')->putFileAs('categoryThumbnails', $file, $request->subCategory. '.'. $file->guessExtension() );
 
             // return $file->getClientOriginalExtension();
         }
