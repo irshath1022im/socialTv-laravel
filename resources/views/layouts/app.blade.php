@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="fb:app_id"          content="1174068929708878" />
-<meta property="og:url"           content="http://socialtv24.info/posts/61" />
+<meta property="og:url"           content="@yield('page_url')" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="உண்மையின் தேடல் மக்களின் குரல்" />
-<meta property="og:description"   content="ஐபிஎல் ஆட்டத்தில் ராஜஸ்தானுக்கு 148 ரன்கள் இலக்கு" />
 <meta property="og:image"         content="https://www.socialtv24.info/img/Logo.jpg" />
 
         <title>SOCIAL TV</title>
@@ -71,6 +70,7 @@
         {{-- @component('components.covid19bar')
 
         @endcomponent --}}
+
 
             @yield('content')
 

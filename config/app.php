@@ -162,12 +162,16 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
+
         /*
          * Package Service Providers...
-         * 
+
+         *
          */
 
-        
+        Scottybo\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

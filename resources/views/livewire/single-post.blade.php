@@ -1,5 +1,5 @@
 <div>
-    {{-- {{ $postId}} --}}
+
 
     <div wire:loading>
         Getting Post...
@@ -18,7 +18,7 @@
     </div>
 
     <div class="fb-share-button"
-    data-href=" {{ url('http://www.socialtv24.info/adminPost/'.$post->id)}}"
+    data-href=" {{ url('http://www.socialtv24.info/posts/'.$post->id)}}"
     data-layout="button_count">
     </div>
 

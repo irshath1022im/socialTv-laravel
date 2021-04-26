@@ -43,9 +43,6 @@ class AdminPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
-        // return $request->all();
 
         $validated = $request->validate([
             'title' => 'required|min:10|not_regex:/(^([a-zA-z]+)(\d+)?$)/u',
@@ -80,9 +77,12 @@ class AdminPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+        $posts = Post::with('subCategory')->orderByDesc('created_at')->paginate(10);
+        // dump($posts);
+        return view('admin.post',['posts' => $posts]);
 
     }
 

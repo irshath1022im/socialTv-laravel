@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
 
+
+
     @section('content')
 
 
@@ -11,6 +13,7 @@
         {{-- @livewire('home-category-posts') --}}
 
         @livewire('home-recent-post')
+
 
 
         @livewire('home-page-social-ads')

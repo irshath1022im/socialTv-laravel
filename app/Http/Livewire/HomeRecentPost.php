@@ -18,7 +18,7 @@ class HomeRecentPost extends Component
             return $query->with('category')->get();
                         }])
                    ->orderByDesc('created_at')
-                   ->paginate(10);
+                   ->simplePaginate(5);
         return view('livewire.home-recent-post', ['posts'=>$result]);
     }
 }
