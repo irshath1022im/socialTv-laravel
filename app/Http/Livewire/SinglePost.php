@@ -35,7 +35,7 @@ class SinglePost extends Component
         $post = Post::findOrFail($this->postId);
         Meta::set('title', $post->title);
         // Meta::set('description', 'This is my home. Enjoy!');
-        Meta::set('image', Storage::url($post->thumbnail));
+        Meta::set('image', Storage::path($post->thumbnail));
         return view('livewire.single-post', ['post' => $post]);
     }
 }
