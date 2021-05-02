@@ -28,6 +28,9 @@ use Facebook\Exceptions\FacebookResponseException;
 */
 
 Route::get('/', function () {
+    Meta::set('title', 'Social24TV');
+    Meta::set('image', asset('img/Logo.jpg'));
+
     return view('welcome');
 })->name('home');
 
@@ -126,11 +129,3 @@ Route::get('/test', function(){
     //   return view('facebook', ['data' => $graphNode]);
 });
 
-Route::get('metaTest', function () {
-
-    Meta::set('title', 'You are at home');
-    Meta::set('description', 'This is my home. Enjoy!');
-    Meta::set('image', asset('images/home-logo.png'));
-
-    return view('metaTest');
-});

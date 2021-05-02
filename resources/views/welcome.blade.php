@@ -12,7 +12,6 @@
 
         {{-- @livewire('home-category-posts') --}}
 
-working for fb development
         @livewire('home-recent-post')
 
 
