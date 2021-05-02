@@ -4,16 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="fb:app_id"          content="1174068929708878" />
-<meta property="og:url"           content="@yield('page_url')" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="உண்மையின் தேடல் மக்களின் குரல்" />
-<meta property="og:image"         content="{{asset('img/Logo.jpg') }}" />
+{{-- <meta property="og:url"           content="@yield('page_url')" /> --}}
+{{-- <meta property="og:type"          content="website" /> --}}
+<meta property="og:title"         content="{!! Meta::get('title') !!}" />
+{{-- <meta property="og:image"           content="{!! Meta::get(asset('img/building.jpg'))  !!}" /> --}}
+@meta('image')
+{{-- @meta('title') --}}
 <meta property="og:image:width"    content="475px" />
 <meta property="og:image:height"    content="475px" />
-<<<<<<< HEAD
+{{-- @meta('description') --}}
 
-=======
->>>>>>> 46db72f04b28662e4f607a2cfad048b587c64f12
+
 
         <title>SOCIAL TV</title>
 

@@ -166,11 +166,13 @@ return [
 
         /*
          * Package Service Providers...
+         *
 
          *
          */
 
         Scottybo\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
+        Eusonlito\LaravelMeta\MetaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +234,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Meta'    => Eusonlito\LaravelMeta\Facade::class,
 
     ],
 

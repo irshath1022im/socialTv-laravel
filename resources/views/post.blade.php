@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.metaTest')
 
 
 @section('content')
