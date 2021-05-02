@@ -7,6 +7,7 @@ use livewire;
 use Facebook\Facebook;
 use Admin\AdsController;
 use Admin\AdminPostController;
+use Meta;
 use Admin\AdminSubCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\Categories;
@@ -125,3 +126,11 @@ Route::get('/test', function(){
     //   return view('facebook', ['data' => $graphNode]);
 });
 
+Route::get('metaTest', function () {
+
+    Meta::set('title', 'You are at home');
+    Meta::set('description', 'This is my home. Enjoy!');
+    Meta::set('image', asset('images/home-logo.png'));
+
+    return view('metaTest');
+});
