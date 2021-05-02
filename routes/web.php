@@ -7,6 +7,7 @@ use livewire;
 use Facebook\Facebook;
 use Admin\AdsController;
 use Admin\AdminPostController;
+use Meta;
 use Admin\AdminSubCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\Categories;
@@ -27,6 +28,9 @@ use Facebook\Exceptions\FacebookResponseException;
 */
 
 Route::get('/', function () {
+    Meta::set('title', 'Social24TV');
+    Meta::set('image', asset('img/Logo.jpg'));
+
     return view('welcome');
 })->name('home');
 
