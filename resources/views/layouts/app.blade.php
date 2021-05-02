@@ -6,8 +6,8 @@
 <meta property="fb:app_id"          content="1174068929708878" />
 <meta property="og:title"         content="{!! Meta::get('title') !!}" />
 @meta('image')
-<meta property="og:image:width"    content="475px" />
-<meta property="og:image:height"    content="475px" />
+<meta property="og:image:width"     content="200px" />
+<meta property="og:image:height"    content="200px" />
         <title>SOCIAL TV</title>
 
         <!-- Fonts -->
