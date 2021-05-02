@@ -8,12 +8,6 @@
 @meta('image')
 <meta property="og:image:width"    content="475px" />
 <meta property="og:image:height"    content="475px" />
-<<<<<<< HEAD
-
-=======
->>>>>>> 46db72f04b28662e4f607a2cfad048b587c64f12
-
-
         <title>SOCIAL TV</title>
 
         <!-- Fonts -->
