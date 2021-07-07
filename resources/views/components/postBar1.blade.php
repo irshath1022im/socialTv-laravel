@@ -1,8 +1,9 @@
 <div style="padding: 5px; width:430px">
-    <div class="d-flex flex-row" style="padding: 0px; width=130px;">
-        <img class="img-fluid postBar1-img"
+    <div class="d-flex flex-row" style="padding: 0px; width=130px; ">
+        <img class="img-fluid postBar1-img" style="width:130px; height:130px; border: 1px solid blue"
             @if ($post->thumbnail !== null)
-            src="{{ Storage::url($post->thumbnail)}}"
+
+                src="{{ Storage::url($post->thumbnail)}}"
             @else
                 src="{{ asset('img/Logo.jpg') }}"
             @endif
